@@ -71,12 +71,11 @@ learning_config:
 
   dataset_config:
     train_paths:
-      - /mnt/Miscellanea/Datasets/Speech/LibriSpeech/train-clean-100/transcripts.tsv
+      - ./datasets/train.tsv
     eval_paths:
-      - /mnt/Miscellanea/Datasets/Speech/LibriSpeech/dev-clean/transcripts.tsv
-      - /mnt/Miscellanea/Datasets/Speech/LibriSpeech/dev-other/transcripts.tsv
+      - ./datasets/dev.tsv
     test_paths:
-      - /mnt/Miscellanea/Datasets/Speech/LibriSpeech/test-clean/transcripts.tsv
+      - ./datasets/test.tsv
     tfrecords_dir: null
 
   optimizer_config:
@@ -85,11 +84,11 @@ learning_config:
     beta2: 0.98
     epsilon: 1e-9
 
-  running_config:
+  running_config: # step = 570760/batch_size
     batch_size: 2
     accumulation_steps: 4
     num_epochs: 20
-    outdir: /mnt/Miscellanea/Models/local/conformer
+    outdir: ./models
     log_interval_steps: 300
     eval_interval_steps: 500
     save_interval_steps: 1000
